@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin — TOKODIGITAL</title><link rel="stylesheet" href="/style.css"></head>
+<body class="admin-body">
+<header class="topbar"><a class="brand" href="/"><span class="brand-mark">TD</span><span>TOKO<span class="brand-light">DIGITAL</span></span></a><a class="back-link" href="/">← Kembali ke toko</a></header>
+<main class="admin-wrap">
+  <section class="login-panel" id="login-panel"><span class="eyebrow blue">AREA TERBATAS</span><h1>Admin TOKODIGITAL</h1><p>Masuk untuk mengelola produk dan pengaturan toko.</p>
+    <form id="login-form"><label>Email admin<input type="email" id="email" required autocomplete="username" placeholder="admin@tokomu.com"></label><label>Password<input type="password" id="password" required autocomplete="current-password" placeholder="Password admin"></label><button class="btn btn-primary full" type="submit">Masuk ke dashboard</button><p class="form-message" id="login-message"></p></form>
+  </section>
+  <section id="dashboard" class="dashboard hidden">
+    <div class="dash-head"><div><span class="eyebrow blue">PENGELOLAAN TOKO</span><h1>Dashboard admin</h1><p>Kelola katalog dan konfigurasi tokomu.</p></div><button class="btn btn-outline" id="logout">Keluar</button></div>
+    <div class="stats"><div><span>Total produk</span><b id="total-products">0</b></div><div><span>Status toko</span><b>Aktif</b></div></div>
+    <div class="admin-card"><h2>Tambah produk</h2><form id="product-form" class="product-form"><input type="hidden" id="product-id"><label>Nama produk<input id="p-name" required placeholder="Contoh: Voucher digital"></label><label>Harga (Rp)<input id="p-price" type="number" min="0" required placeholder="15000"></label><label>Stok<input id="p-stock" type="number" min="0" required value="1"></label><label class="wide">Deskripsi<textarea id="p-description" rows="2" placeholder="Deskripsi produk"></textarea></label><label class="wide">URL gambar (opsional)<input id="p-image" type="url" placeholder="https://..."></label><div class="wide form-actions"><button class="btn btn-primary" type="submit" id="save-product">Simpan produk</button><button class="btn btn-outline" type="button" id="cancel-edit">Batal</button></div></form></div>
+    <div class="admin-card"><div class="card-heading"><h2>Daftar produk</h2><span id="product-status"></span></div><div id="admin-products" class="admin-products"></div></div>
+    <div class="admin-card"><h2>Pengaturan toko & API</h2><p class="muted">API Key disimpan di backend, bukan ditampilkan ke pengunjung.</p><form id="settings-form" class="settings-form"><label>Nama toko<input id="store-name"></label><label>Slogan toko<input id="store-tagline"></label><label class="wide">API Key<input id="api-key" type="password" autocomplete="new-password" placeholder="Tempel API Key milikmu di sini"></label><button class="btn btn-primary" type="submit">Simpan pengaturan</button><span id="settings-status" class="form-message"></span></form></div>
+  </section>
+</main><script src="/admin.js"></script></body></html>
